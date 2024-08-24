@@ -2,10 +2,11 @@ let $redBlock = document.querySelector("#red_block");
 let $yellowBlock = document.querySelector("#yellow_block");
 let $greenBlock = document.querySelector("#green_block");
 let textBlock = document.querySelector(".text_block");
+let defaultColor = "white";
 
 let changeColor = (color) => {
   for (let i of [$greenBlock, $redBlock, $yellowBlock]) {
-    i.style.backgroundColor = "white";
+    i.style.backgroundColor = defaultColor;
   }
 
   if (color === "red") {
@@ -21,19 +22,19 @@ let changeColor = (color) => {
     textBlock.innerHTML = "GO";
     textBlock.style.color = "greenyellow";
   } else {
-    $greenBlock.style.backgroundColor = "white";
-    $redBlock.style.backgroundColor = "white";
-    $yellowBlock.style.backgroundColor = "white";
+    $greenBlock.style.backgroundColor = defaultColor;
+    $redBlock.style.backgroundColor = defaultColor;
+    $yellowBlock.style.backgroundColor = defaultColor;
   }
 };
 
-$redBlock.addEventListener("click", function () {
+$redBlock.addEventListener("mousemove", function () {
   changeColor("red");
 });
-$yellowBlock.addEventListener("click", function () {
+$yellowBlock.addEventListener("mousemove", function () {
   changeColor("yellow");
 });
 
-$greenBlock.addEventListener("click", function () {
+$greenBlock.addEventListener("mousemove", function () {
   changeColor("green");
 });
